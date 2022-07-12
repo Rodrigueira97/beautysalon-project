@@ -1,0 +1,713 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --Primary-color: hsla(159, 36%, 57%);
+    --second-color: hsla(159, 65%, 88%);
+    --Dark: hsla(0, 0%, 0%);
+    --cor-de-fundo: hsl(0, 0%, 98%);
+    --text-color-grey: hsl(0, 0%, 46%);
+    --light-gray: hsl(0, 0%, 89%);
+
+
+
+
+    font-size: 62.5%;
+}
+
+/* ===================================== Padrão ================================ */
+html,
+body {
+    width: 100vw;
+    overflow: overlay;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+section {
+    width: 37.5rem;
+    margin: auto;
+
+    padding-inline: 2.4rem;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2.4rem;
+}
+
+p {
+    color: var(--text-color-grey);
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+button {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.6rem;
+
+    display: flex;
+    align-items: center;
+
+    height: 5.6rem;
+    padding: 1.7rem 3.2rem 1.8rem 3.2rem;
+
+    background-color: var(--Primary-color);
+
+    color: var(--cor-de-fundo);
+
+    cursor: pointer;
+
+    border: none;
+    border-radius: .4rem;
+}
+
+span {
+    color: var(--Primary-color);
+    font-weight: bold;
+}
+
+/* ========================== Navigation ================================ */
+
+nav#navigation {
+    height: 7.2rem;
+    width: 100%;
+    background-color: var(--cor-de-fundo);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    position: fixed;
+    top: 0;
+    left: 50%;
+    z-index: 1;
+    /* PARA DEIXAR O ELEMENTO NO MEIO DA PAGINA TOTAL */
+    transform: translateX(-50%);
+    /* Voltar o elemento 50% menor  */
+}
+
+nav .openMenu {
+    background-color: var(--cor-de-fundo);
+    padding: 0;
+    height: fit-content;
+}
+
+/* ========================== Nav Scroll ================================ */
+/* Quando tiver a class Scroll */
+
+
+nav#navigation.scroll {
+    background-color: var(--Primary-color);
+}
+
+nav.scroll button.openMenu {
+    background-color: var(--Primary-color);
+}
+
+nav.scroll .openMenu svg {
+    background-color: var(--Primary-color);
+}
+
+nav.scroll svg path:nth-child(2) {
+    fill: var(--cor-de-fundo);
+}
+
+nav.scroll .openMenu svg path {
+    stroke: var(--cor-de-fundo);
+}
+
+nav .menu {
+    display: none;
+}
+
+/* ========================== Menu Expanded ================================ */
+
+body.menuExpanded {
+    overflow: hidden;
+}
+
+body.menuExpanded nav .menu {
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--cor-de-fundo);
+    color: var(--Dark);
+
+    font-size: 3rem;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+body.menuExpanded nav .closeMenu {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+    padding-top: 2.4rem;
+    margin-right: 2.4rem;
+}
+
+
+body.menuExpanded nav .closeMenu button {
+    background-color: var(--cor-de-fundo);
+
+    padding: 0;
+    height: fit-content;
+
+    cursor: pointer;
+}
+
+body.menuExpanded nav .menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6.4rem;
+
+    margin-top: 16.5rem;
+}
+
+body.menuExpanded nav .menu li {
+    list-style: none;
+}
+
+
+body.menuExpanded nav .menu a {
+    text-decoration: none;
+    color: var(--Dark);
+
+    font-weight: 700;
+}
+
+
+/* ============================ home ================================ */
+
+section#home {
+    height: 71.7rem;
+
+    background-color: var(--cor-de-fundo);
+
+    position: relative;
+    z-index: -2;
+}
+
+section#home img.background {
+    width: calc(34.789rem - 1.1rem);
+    height: 24.227rem;
+
+    margin-top: 10.4rem;
+
+    position: absolute;
+    z-index: -1;
+    right: -0.1rem;
+}
+
+section#home img {
+    width: 33.5rem;
+
+    border-radius: .4rem;
+
+    margin-top: 14.4rem;
+}
+
+section#home h1 {
+    width: 32.7rem;
+
+    text-align: center;
+
+    margin-top: 3.2rem;
+}
+
+section#home p {
+    width: 29.8rem;
+
+    margin-top: 1.6rem;
+
+    text-align: center;
+}
+
+section#home button {
+    width: 21.4rem;
+
+    cursor: pointer;
+    margin-top: 3.2rem;
+    margin-bottom: 8rem;
+    margin-inline: auto;
+}
+
+
+
+/* ============================ About ================================ */
+
+
+section#about {
+    height: 113.1rem;
+
+    position: relative;
+
+    border-top: 1px solid var(--Primary-color);
+}
+
+section#about::before {
+    content: "";
+    /* precisamos adicionar display block e definir umar altura largura para esse conteudo, 
+        e precisa inserir o 'content'*/
+    width: 25.429rem;
+    height: 24rem;
+
+    background-color: var(--second-color);
+    border-radius: .4rem;
+
+    display: block;
+
+    position: absolute;
+    z-index: -1;
+    top: 8rem;
+}
+
+section#about img {
+    width: 100%;
+
+    margin-top: 10.135rem;
+}
+
+section#about h2 {
+    margin-top: 3.2rem;
+}
+
+section#about p {
+    width: 32.2rem;
+    height: 59.8rem;
+
+    line-height: 2.6rem;
+
+    margin-top: 1.6rem;
+}
+
+
+/* ============================ Services ================================ */
+
+
+section#services {
+    height: 155.3rem;
+
+    border-top: 1px solid var(--Primary-color);
+    background-color: var(--cor-de-fundo);
+}
+
+section#services h2 {
+    padding-top: 8rem;
+}
+
+section#services p {
+    width: 32.7rem;
+
+    margin-top: 1.6rem;
+    margin-bottom: 6.4rem;
+
+    font-weight: 400;
+
+    color: var(--Dark);
+}
+
+section#services .service {
+    width: 32.7rem;
+    height: 37.2rem;
+
+    border-bottom: 4px solid var(--Primary-color);
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+
+    background-color: var(--cor-de-fundo);
+
+    margin-bottom: 2.4rem;
+
+    text-align: center;
+}
+
+section#services .service img {
+    margin-top: 6.05rem;
+
+}
+
+section#services .service h3 {
+    font-size: 2.651rem;
+    font-weight: 700;
+
+    margin-top: 2.6rem;
+}
+
+section#services .service p {
+    width: 26.3rem;
+
+    margin-top: 1.2rem;
+    margin-inline: auto;
+
+    text-align: center;
+    font-weight: 400;
+
+    color: var(--text-color-grey);
+
+    line-height: 2.6rem;
+}
+
+/* ============================ Depoimentos ================================ */
+
+
+section#depositions {
+    height: 70.3rem;
+    border-top: 1px solid var(--Primary-color);
+
+}
+
+section#depositions h2 {
+    padding-top: 8rem;
+}
+
+section#depositions .testimonial {
+    width: 32.7rem;
+    height: 30.2rem;
+
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+
+    margin-top: 6.4rem;
+
+    padding-inline: 3.2rem;
+    padding-top: 3.2rem;
+}
+
+section#depositions .testimonial p {
+    line-height: 2.6rem;
+
+    color: var(--Dark);
+}
+
+section#depositions .testimonial .person {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+
+    color: var(--text-color-grey);
+
+    margin-top: 2.6rem;
+}
+
+/* ============================ Depoimentos ================================ */
+
+section#contact {
+    height: 63.2rem;
+
+    border-top: 1px solid var(--Primary-color);
+}
+
+section#contact h2 {
+    padding-top: 8rem;
+}
+
+section#contact p {
+    margin-top: 1.6rem;
+}
+
+section#contact button {
+    display: flex;
+    gap: 1rem;
+
+    margin-top: 3.2rem;
+}
+
+section#contact ul {
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+
+    margin-top: 6.6rem;
+}
+
+section#contact li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.4rem;
+}
+
+section#contact li p {
+    margin: 0;
+}
+
+/* ============================ rodapé ================================ */
+
+footer {
+    height: 29.4rem;
+
+    padding: 6.4rem 2.4rem;
+
+    background-color: var(--Primary-color);
+}
+
+footer p {
+    color: var(--cor-de-fundo);
+}
+
+footer .autorais {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1.2rem;
+}
+
+footer ul {
+    display: flex;
+    gap: 3.9rem;
+
+    list-style: none;
+
+    margin-top: 3.2rem;
+}
+
+
+/* ============= responsive ================ */
+
+@media(min-width:1024px) {
+    body {
+        /* padding-inline: 12.3rem; */
+
+        background-color: var(--cor-de-fundo);
+    }
+
+    section {
+        padding-inline: 12.3rem;
+        width: min(100%, 136.6rem);
+    }
+
+
+    /* ===================== Navigation ====================== */
+    nav#navigation {
+        width: 100%;
+        height: 7.2rem;
+
+        border-bottom: 1px solid var(--light-gray);
+    }
+
+    nav .closeMenu,
+    nav .openMenu {
+        display: none;
+    }
+
+    nav .menu {
+        display: flex;
+    }
+
+    nav .menu ul {
+        display: flex;
+        gap: 3.2rem;
+
+        list-style: none;
+    }
+
+    nav .menu a {
+        text-decoration: none;
+        color: var(--Dark);
+
+        font-size: 1.6rem;
+        font-weight: 400;
+
+    }
+
+
+    /* ===================== Home ====================== */
+
+    section#home {
+
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        gap: 4.8rem;
+    }
+
+    section#home header {
+        width: 44rem;
+        position: relative;
+    }
+
+    section#home img {
+        width: 37.5rem;
+        margin-top: 22.4rem;
+    }
+
+    section#home img.background {
+        margin-top: 17.6rem;
+    }
+
+    section#home .content {
+        width: 39.6rem;
+        height: 24rem;
+
+        margin-block: 25rem 28.1rem;
+    }
+
+    section#home .content h1 {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 1.2rem;
+
+        font-size: 3.6rem;
+        text-align: left;
+    }
+
+    section#home .content p {
+        width: 34.7rem;
+        margin: 0;
+        margin-bottom: 2.4rem;
+        font-size: 1.8rem;
+        text-align: left;
+    }
+
+    section#home .content button {
+        margin: 0;
+    }
+
+
+    /* ===================== About ====================== */
+
+
+    section#about {
+        height: 76.6rem;
+
+        padding: 0;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    section#about::before {
+        top: 20rem;
+        left: 10.2rem;
+    }
+
+    section#about img {
+        width: 33rem;
+
+        margin: 0;
+    }
+
+    section#about h2 {
+        font-size: 3.6rem;
+        margin: 0;
+    }
+
+    section#about p {
+        width: 61rem;
+        height: fit-content;
+
+        margin: 0;
+    }
+
+
+
+    /* ===================== Services ====================== */
+
+    section#services {
+        height: 87.1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section#services .cards {
+        display: flex;
+        justify-content: center;
+
+        gap: 2rem;
+    }
+
+    section#services header {
+        text-align: center;
+    }
+
+    section#services header p {
+        width: 52.3rem;
+        font-size: 1.8rem;
+    }
+
+    /* ===================== Depositions ====================== */
+
+
+    section#depositions {
+        height: 82.6rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    section#depositions h2 {
+        width: 48.1rem;
+        font-size: 3.6rem;
+        text-align: center;
+    }
+
+    section#depositions .testimonial {
+        width: 54.4rem;
+    }
+
+
+
+    /* ===================== Contact ====================== */
+
+
+    section#contact {
+        height: 58.3rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 27rem;
+    }
+
+    section#contact header {
+        width: 40.4rem;
+        height: 26.3rem;
+    }
+
+    section#contact header h2 {
+        padding: 0;
+        font-size: 3.6rem;
+    }
+
+    section#contact header p {
+        font-size: 1.8rem;
+    }
+
+
+    footer {
+        width: 100%;
+    }
+}
