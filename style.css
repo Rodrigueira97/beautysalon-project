@@ -7,9 +7,10 @@
 }
 
 :root {
-    --Primary-color: hsla(159, 36%, 57%);
-    --second-color: hsla(159, 65%, 88%);
-    --Dark: hsla(0, 0%, 0%);
+    --hue: 270;
+    --Primary-color: hsl(var(--hue), 36%, 57%);
+    --second-color: hsl(var(--hue), 65%, 88%);
+    --Dark: hsl(0, 0%, 0%);
     --cor-de-fundo: hsl(0, 0%, 98%);
     --text-color-grey: hsl(0, 0%, 46%);
     --light-gray: hsl(0, 0%, 89%);
@@ -21,14 +22,15 @@
 }
 
 /* ===================================== Padrão ================================ */
-html,
-body {
-    width: 100vw;
-    overflow: overlay;
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
+    width: 100vw;
     font-family: 'Poppins', sans-serif;
+    overflow: overlay;
 }
 
 section {
@@ -78,6 +80,11 @@ button {
     border-radius: .4rem;
 }
 
+button:hover {
+    background-color: var(--Dark);
+    transition: .5s;
+}
+
 span {
     color: var(--Primary-color);
     font-weight: bold;
@@ -103,10 +110,22 @@ nav#navigation {
     /* Voltar o elemento 50% menor  */
 }
 
+nav#navigation .logo path:nth-child(2) {
+    fill: var(--Primary-color);
+}
+
 nav .openMenu {
     background-color: var(--cor-de-fundo);
     padding: 0;
     height: fit-content;
+}
+
+nav .openMenu svg path {
+    stroke: var(--Primary-color);
+}
+
+nav .closeMenu svg path {
+    stroke: var(--Primary-color);
 }
 
 /* ========================== Nav Scroll ================================ */
@@ -115,6 +134,10 @@ nav .openMenu {
 
 nav#navigation.scroll {
     background-color: var(--Primary-color);
+}
+
+nav#navigation.scroll .logo path:nth-child(2) {
+    fill: white;
 }
 
 nav.scroll button.openMenu {
@@ -141,6 +164,7 @@ nav .menu {
 
 body.menuExpanded {
     overflow: hidden;
+
 }
 
 body.menuExpanded nav .menu {
@@ -158,7 +182,6 @@ body.menuExpanded nav .menu {
     position: absolute;
     top: 0;
     left: 0;
-
 }
 
 body.menuExpanded nav .closeMenu {
@@ -208,20 +231,25 @@ section#home {
     height: 71.7rem;
 
     background-color: var(--cor-de-fundo);
-
-    position: relative;
-    z-index: -2;
 }
 
-section#home img.background {
+section#home header {
+    position: relative;
+}
+
+section#home svg {
     width: calc(34.789rem - 1.1rem);
     height: 24.227rem;
 
     margin-top: 10.4rem;
 
     position: absolute;
-    z-index: -1;
-    right: -0.1rem;
+    z-index: 0;
+    right: -2.2rem;
+}
+
+section#home svg rect {
+    fill: var(--second-color);
 }
 
 section#home img {
@@ -230,6 +258,8 @@ section#home img {
     border-radius: .4rem;
 
     margin-top: 14.4rem;
+    position: relative;
+    right: 2.4rem;
 }
 
 section#home h1 {
@@ -460,8 +490,9 @@ section#contact li p {
 
 /* ============================ rodapé ================================ */
 
-footer {
+footer#rodape {
     height: 29.4rem;
+    width: 100%;
 
     padding: 6.4rem 2.4rem;
 
@@ -523,7 +554,10 @@ footer ul {
 
     nav .menu ul {
         display: flex;
+        align-items: center;
         gap: 3.2rem;
+
+        height: 7.2rem;
 
         list-style: none;
     }
@@ -535,6 +569,16 @@ footer ul {
         font-size: 1.6rem;
         font-weight: 400;
 
+    }
+
+    nav.scroll .menu a{
+        color: white;
+    }
+
+    nav .menu a.active{
+        border-bottom: .2rem solid white;
+        transition: .3s;
+        transform: rotate(0.5turn);
     }
 
 

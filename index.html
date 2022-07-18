@@ -53,11 +53,11 @@
             </div>
 
             <ul>
-                <li><a href="">Início</a></li>
-                <li><a href="">Sobre</a></li>
-                <li><a href="">Serviços</a></li>
-                <li><a href="">Depoimentos</a></li>
-                <li><a href="">Contato</a></li>
+                <li><a onclick="closeMenu()" class="" href="#home">Início</a></li>
+                <li><a onclick="closeMenu()" href="#about">Sobre</a></li>
+                <li><a onclick="closeMenu()" href="#services">Serviços</a></li>
+                <li><a onclick="closeMenu()" href="#depositions">Depoimentos</a></li>
+                <li><a onclick="closeMenu()" href="#contact">Contato</a></li>
             </ul>
         </div>
 
@@ -65,7 +65,9 @@
 
     <section id="home">
         <header>
-            <img class="background" src="assets/fundo.svg" alt=" Fundo verde">
+            <svg width="337" height="243" viewBox="0 0 337 243" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.106445" width="347.894" height="242.269" rx="4" fill="#CCF4E6" />
+            </svg>
             <img src="assets/cabeleireira-secando-cliente.png" alt="Cabeleireira secando o cabelo de uma cliente">
         </header>
 
@@ -208,7 +210,7 @@
     </section>
 
 
-    <footer>
+    <footer id="rodape">
         <img src="assets/Logo.svg" alt="Logo">
 
         <div class="autorais">
